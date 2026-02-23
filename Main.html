@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Favorite Person</title>
+    <style>
+        /* This is your CSS (The Design) */
+        body {
+            background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 20px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 85%;
+            max-width: 380px;
+            border: 2px solid white;
+        }
+
+        h1 {
+            color: #d63384;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .heart-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        #reason-text {
+            font-size: 1.1rem;
+            color: #4a4a4a;
+            min-height: 80px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            transition: opacity 0.3s ease;
+        }
+
+        #love-btn {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        #love-btn:hover {
+            background-color: #ff758f;
+            transform: translateY(-2px);
+        }
+
+        #love-btn:active {
+            transform: scale(0.95);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <span class="heart-icon">💝</span>
+        <h1>Hi Juliette!</h1>
+        
+        <p id="reason-text">I made this for you. Click the button below to see a reason why I love you.</p>
+        
+        <button id="love-btn">Click for a Reason</button>
+
+        <footer>Made with ❤️ by [Your Name]</footer>
+    </div>
+
+    <script>
+        // This is your logic (The "Python-like" part)
+        // Add as many reasons as you want inside the brackets!
+        const reasons = [
+            "The way you make every day feel special just by being in it.",
+            "Your beautiful smile that lights up my whole world.",
+            "How you always know exactly how to make me laugh.",
+            "Your kindness and the way you care for people.",
+            "The way you support me in everything I do.",
+            "Because you're not just my girlfriend, you're my best friend.",
+            "How cute you look when you're sleepy.",
+            "Your passion for the things you love."
+        ];
+
+        const btn = document.getElementById('love-btn');
+        const text = document.getElementById('reason-text');
+
+        btn.addEventListener('click', () => {
+            // Pick a random reason from the list
+            const randomIndex = Math.floor(Math.random() * reasons.length);
+            const randomReason = reasons[randomIndex];
+            
+            // Fade effect
+            text.style.opacity = 0;
+            
+            setTimeout(() => {
+                text.innerText = randomReason;
+                text.style.opacity = 1;
+            }, 300);
+        });
+    </script>
+</body>
+</html>
